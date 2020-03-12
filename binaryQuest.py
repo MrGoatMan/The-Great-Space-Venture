@@ -1,18 +1,14 @@
 
 class Binary(object):
-    answer = " "
 
-    def yes(answer):
-        return "yes"
+
+    which = bool(False)
     
-    def no(answer):
-        return "no"
-    
-    def __init__(self, answer):
-        answer = input()
-        if (answer in ["Yes", "Yea", "Sure", "Yeah", "Indeed", "Ye"]):
-            self.yes()
-        if (answer in ["No", "Nah", "Nein", "Negative", "Negatory", "Nope"]):
-            self.no()
+    def __init__(self):
+        self.answer = input("Yes/No?: ")
+        if (self.answer in ["Yes", "yes", "YEs", "YES", "Yea", "yea", "Sure", "sure", "Yeah", "yeah", "Indeed", "indeed", "Ye", "ye"]):
+            Binary.which = True
+        if (self.answer in ["No", "NO", "no", "Nah", "nah", "Nein", "nein", "Negative", "negative", "Negatory", "negatory", "Nope", "nope"]):
+            Binary.which = False
             
-            
+        
